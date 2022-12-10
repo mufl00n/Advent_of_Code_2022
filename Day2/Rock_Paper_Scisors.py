@@ -20,11 +20,6 @@
 # 3 if the round was a draw
 # 6 if you won
 
-# opponent_dict = {
-#     "A" : "Rock",
-#     "B" : "Paper",
-#     "C" : "Scissors",
-# }
 A = "Rock"
 B = "Paper"
 C = "Scissors"
@@ -32,12 +27,6 @@ C = "Scissors"
 X = "Rock"
 Y = "Paper"
 Z = "Scissors"
-
-# my_dict = {
-#     "X" : "Rock",
-#     "Y" : "Paper",
-#     "Z" : "Scissors"
-# }
 
 loss = 0
 draw = 3
@@ -47,35 +36,81 @@ Rock = 1
 Paper = 2
 Scissors = 3
 
-
 points = 0
 
-with open("RPS_test.txt") as fp:
+with open("RPS.txt") as fp:
     lines = fp.readlines()
 
-# for line in lines:
-#     if line.strip()[:1] == 'B':
-#         if (line.strip()[-1:]) == 'Z':
-#             points += win + Paper
-#             continue
-#
-#
-#     else:
-#         print('nie je tam B')
 
 for line in lines:
-    if line.strip()[:1] == 'B':
-        if (line.strip()[-1:]) == 'Z':
+    if line.strip()[:1] == 'A':
+        if (line.strip()[-1:]) == 'X':
             print(line.strip())
-            points += win + Scissors
-            print(f'{win} + {Scissors}')
+            points += draw + Rock
+            print(f'{draw} + {Rock}')
             print(points)
             print('')
+            continue
 
-        elif (line.strip()[-1:]) == 'X':
+
+        elif (line.strip()[-1:]) == 'Y':
+            print(line.strip())
+            points += win + Paper
+            print(f'{win} + {Paper}')
+            print(points)
+            print('')
+            continue
+        elif (line.strip()[-1:]) == 'Z':
+            print(line.strip())
+            points += loss + Scissors
+            print(f'{loss} + {Scissors}')
+            print(points)
+            print('')
+            continue
+
+    elif line.strip()[:1] == 'B':
+        if (line.strip()[-1:]) == 'X':
             print(line.strip())
             points += loss + Rock
             print(f'{loss} + {Rock}')
             print(points)
             print('')
+            continue
+        elif (line.strip()[-1:]) == 'Y':
+            print(line.strip())
+            points += draw + Paper
+            print(f'{draw} + {Paper}')
+            print(points)
+            print('')
+            continue
+        elif (line.strip()[-1:]) == 'Z':
+            print(line.strip())
+            points += win + Scissors
+            print(f'{win} + {Scissors}')
+            print(points)
+            print('')
+            continue
+    elif line.strip()[:1] == 'C':
+        if (line.strip()[-1:]) == 'X':
+            print(line.strip())
+            points += win + Rock
+            print(f'{win} + {Rock}')
+            print(points)
+            print('')
+            continue
+        elif (line.strip()[-1:]) == 'Y':
+            print(line.strip())
+            points += loss + Paper
+            print(f'{loss} + {Paper}')
+            print(points)
+            print('')
+            continue
+        elif (line.strip()[-1:]) == 'Z':
+            print(line.strip())
+            points += draw + Scissors
+            print(f'{draw} + {Scissors}')
+            print(points)
+            print('')
+            continue
+
 
