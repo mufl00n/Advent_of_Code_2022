@@ -1,0 +1,17 @@
+B Z
+A Z
+B Z
+C Z
+C Z
+B X
+A X
+C X
+A Z
+C Y
+C X
+C Y
+C Y
+A X
+A Z
+A Z
+A X
