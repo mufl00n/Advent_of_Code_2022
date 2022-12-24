@@ -4,15 +4,18 @@ points = [] # point assigned to individual alphabet letters in range 1-52 (a-Z)
 common_elements = [] # list of elements appearing in both half of input strings
 final_dictionary = {} # dictionary of alphabet : common elements
 element_score = [] # list of points assigned to found elements
-
+part2_zoznam = []
 # fullfil "points" list
 for n in range(1,53):
     points.append(n)
-print(f'printing list of points: \n {points}')
+#print(f'printing list of points: \n {points}')
 
 # fullfil "common_elements" list
-with open('rucksacks.txt') as fp:
-    lines = fp.readlines()
+
+
+def common_elemenents_part1():
+    with open('rucksacks.txt') as fp:
+        lines = fp.readlines()
     for line in lines:
         line1 =slice(0,len(line)//2)
         line2 = slice(len(line)//2, len(line))
@@ -21,18 +24,48 @@ with open('rucksacks.txt') as fp:
         result = [i for i in list1 if i in list2]
         common_elements.append(result[0])
 
-# pairs alphabet and common_elements into "final_dictionary"
-for key in alphabet:
-    for value in points:
-        final_dictionary[key] = value
-        points.remove(value)
-        break
+    # pairs alphabet and common_elements into "final_dictionary"
+    for key in alphabet:
+        for value in points:
+            final_dictionary[key] = value
+            points.remove(value)
+            break
 
-# fullfil "element_score" list
-for i in common_elements:
-    element_score.append(final_dictionary.get(i))
+    # fullfil "element_score" list
+    for i in common_elements:
+        element_score.append(final_dictionary.get(i))
 
-#print(sum(element_score))
-print(f'\nresult of Part1 is: {sum(element_score)}')
+    #print(sum(element_score))
+    print(f'\nresult of Part1 is: {sum(element_score)}')
+    # pairs alphabet and common_elements into "final_dictionary"
+    for key in alphabet:
+        for value in points:
+            final_dictionary[key] = value
+            points.remove(value)
+            break
+
+    # fullfil "element_score" list
+    for i in common_elements:
+        element_score.append(final_dictionary.get(i))
+
+    # print(sum(element_score))
+    print(f'\nresult of Part1 is: {sum(element_score)}')
 
 
+def common_elemenents_part2():
+    with open('test_part2.txt') as fp:
+        lines = fp.readlines()
+    line_number = 0
+
+
+    for line in lines:
+        for e in line:
+            part2_zoznam.append(e)
+
+
+
+
+
+
+
+common_elemenents_part2()
