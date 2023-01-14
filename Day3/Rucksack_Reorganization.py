@@ -38,7 +38,7 @@ def part1(text_file):
     #print(sum(element_score))
     print(f'\nresult of Part1 is: {sum(element_score)}')
 
-### PART 2 ###
+### PART 2 ####
 common_elements_part2 = []
 final_dictionary_part2 = {}
 score = []
