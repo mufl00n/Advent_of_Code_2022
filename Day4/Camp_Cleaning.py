@@ -11,7 +11,7 @@ def range_contains(a_start, a_end, b_start, b_end):
             ratadlo += 1
     return ratadlo
 
-# PART 2
+# PART 24
 def overlapin(setA,setB):
     counter = 0
     for line in lines:
@@ -41,7 +41,7 @@ for line in lines:
     set1 = set(range1)
     set2 = set(range2)
     # range_contains(a_start,a_end,b_start,b_end)
-    overlapin(set1,set2)
+    # overlapin(set1,set2)
 
 
 # PRINT RESULTS
